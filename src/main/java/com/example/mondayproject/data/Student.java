@@ -2,13 +2,6 @@ package com.example.mondayproject.data;
 
 import java.util.UUID;
 
-public record Student(UUID id, String name){
-//    private String name;
-//    private UUID id;
-//
+public record Student (UUID id, String name, StudentUnit unit, Long index){}
 
-    @Override
-    public UUID id() {
-        return id;
-    }
-}
+

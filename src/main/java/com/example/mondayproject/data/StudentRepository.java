@@ -3,6 +3,7 @@ package com.example.mondayproject.data;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.UUID;
 
@@ -21,5 +22,12 @@ public class StudentRepository {
                 .findFirst()
                 .orElse(null);
     }
+    public Long getMaxIndex(){
+        return students.stream()
+                .map(Student::index)
+                .max(Comparator.naturalOrder())
+                .orElse(0L);
+    }
+
 
 }
